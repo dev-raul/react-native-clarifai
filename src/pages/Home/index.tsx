@@ -1,25 +1,29 @@
 import React from 'react';
-
-import {useTheme} from 'styled-components';
+import { ScrollView } from 'react-native';
+import { launchImageLibrary } from 'react-native-image-picker';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import { PreviewImage } from '../../components/PreviewImage';
+import { Button } from '../../components/Button';
+import { CardTipItem } from '../../components/CardTipItem';
+
+import { useTheme } from 'styled-components';
+import { useHome } from '../../hooks/home';
 
 import * as S from './styles';
-import {PreviewImage} from '../../components/PreviewImage';
-import {Button} from '../../components/Button';
-import {CardTipItem} from '../../components/CardTipItem';
-import {ScrollView} from 'react-native';
-
 export const Home: React.FC = () => {
-  const {colors} = useTheme();
+  const { colors } = useTheme();
+  const { selectedImage, getImage } = useHome();
+
+  const previewUrl = selectedImage?.base64
+    ? `data:${selectedImage?.type};base64,${selectedImage?.base64}`
+    : undefined;
 
   return (
     <S.Container>
-      <S.Header>
-        <S.ButtonCamera>
-          <FontAwesome name="camera" size={20} color={colors?.text.secundary} />
-        </S.ButtonCamera>
-      </S.Header>
-      <PreviewImage />
+      <S.ButtonCamera onPress={getImage}>
+        <FontAwesome name="camera" size={20} color={colors?.text.secundary} />
+      </S.ButtonCamera>
+      <PreviewImage previewUrl={previewUrl} />
       <S.InfoContainer>
         <Button
           prefix={
