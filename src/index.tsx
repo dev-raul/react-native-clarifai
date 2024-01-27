@@ -7,6 +7,10 @@ import { theme } from './styles/theme';
 import { StatusBar } from 'react-native';
 import { Providers } from './providers';
 
+if (__DEV__) {
+  require('./config/reactotron');
+}
+
 const App: React.FC = () => {
   return (
     <Providers>

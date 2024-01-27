@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as S from './styles';
-import {CardTipItemProps} from './types';
+import { CardTipItemProps } from './types';
 
 export const CardTipItem: React.FC<CardTipItemProps> = ({
   title,
@@ -10,7 +10,7 @@ export const CardTipItem: React.FC<CardTipItemProps> = ({
   return (
     <S.Container>
       <S.Percentage>
-        <S.PercentageText>{percentage}%</S.PercentageText>
+        <S.PercentageText>{Math.round(percentage * 100)}%</S.PercentageText>
       </S.Percentage>
       <S.Title>{title}</S.Title>
     </S.Container>

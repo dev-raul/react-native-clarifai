@@ -22,10 +22,10 @@ export const ButtonCamera = styled.TouchableOpacity`
 export const InfoContainer = styled.View`
   flex: 1;
   background-color: ${({ theme: { colors } }) => colors.background.secundary};
-  border-top-right-radius: 40px;
-  border-top-left-radius: 40px;
-  padding: 30px 20px 20px;
-  transform: translateY(-45px);
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 20px 20px 0px;
+  transform: translateY(-25px);
 `;
 
 export const InfoItems = styled.View`

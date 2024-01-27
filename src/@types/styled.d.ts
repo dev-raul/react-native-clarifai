@@ -1,6 +1,6 @@
-import 'styled-components/native';
+import 'styled-components';
 
-declare module 'styled-components/native' {
+declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
       background: {

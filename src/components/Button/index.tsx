@@ -1,11 +1,16 @@
 import React from 'react';
 
 import * as S from './styles';
-import {ButtonProps} from './types';
+import { IButtonProps } from './types';
 
-export const Button: React.FC<ButtonProps> = ({title, prefix, sufix}) => {
+export const Button: React.FC<IButtonProps> = ({
+  title,
+  prefix,
+  sufix,
+  ...props
+}) => {
   return (
-    <S.Container>
+    <S.Container {...props}>
       {prefix}
       <S.Title>{title}</S.Title>
       {sufix}
