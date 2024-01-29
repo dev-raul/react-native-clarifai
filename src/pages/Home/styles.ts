@@ -1,5 +1,5 @@
 import { styled } from 'styled-components/native';
-import { STATU_BAR_HEIGHT } from '../../utils/constants';
+import { STATUS_BAR_HEIGHT } from '../../utils/constants';
 
 export const Container = styled.View`
   flex: 1;
@@ -15,7 +15,7 @@ export const ButtonCamera = styled.TouchableOpacity`
   align-items: center;
   position: absolute;
   z-index: 1000;
-  top: ${STATU_BAR_HEIGHT}px;
+  top: ${STATUS_BAR_HEIGHT}px;
   right: 20px;
 `;
 
@@ -25,6 +25,7 @@ export const InfoContainer = styled.View`
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   padding: 20px 20px 0px;
+  margin-bottom: -25px;
   transform: translateY(-25px);
 `;
 

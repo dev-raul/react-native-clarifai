@@ -1,3 +1,9 @@
-import {getStatusBarHeight} from 'react-native-status-bar-height';
+import { NativeModules, Platform, StatusBar } from 'react-native';
 
-export const STATU_BAR_HEIGHT = getStatusBarHeight(true);
+const { StatusBarManager } = NativeModules;
+
+export const STATUS_BAR_HEIGHT = Platform.select({
+  ios: StatusBarManager.HEIGHT,
+  android: 0,
+  default: 0,
+});
